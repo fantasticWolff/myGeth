@@ -1,0 +1,35 @@
+#!/bin/expect
+
+spawn geth --datadir go-ethereum/Node_2 --networkid 4869 --port 30002 --netrestrict 140.113.216.0/24 console --bootnodes enode://8f914b5f2ec959dc33e1aba4aebd6f733e7b6b206d991c7855b25989c8fc4c2c818ee1ddf29684cef7c866da6d942f4751dfedac437d6f675af720687fd5755d@140.113.216.70:30000
+
+expect ">"
+sleep 4
+
+send "\n"
+expect ">"
+send "admin.addPeer(\"enode://87234432b0628400a323464ae2f5fe58cc9ec44c2030d7d1971c7e8b059b47405bd7cedb9b8bde834845c0e7292003248c0d0e50ed44c39c5647e867b61f8a15@127.0.0.1:30000\")\n"
+
+send "\n"
+expect ">"
+send "personal.listAccounts\n"
+
+send "\n"
+expect ">"
+send "net.peerCount\n"
+
+send "\n"
+expect ">"
+send "eth.getBlock(0)\n"
+
+send "\n"
+expect ">"
+send "eth.blockNumber\n"
+
+send "\n"
+expect ">"
+send "admin.nodeInfo\n"
+
+send "\n"
+expect ">"
+#send "miner.start(1)\n"
+interact

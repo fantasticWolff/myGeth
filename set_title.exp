@@ -1,0 +1,12 @@
+#!/bin/expect
+spawn sh
+exp_send "ls\n"
+set argv0 [lindex $argv 0];
+set argv1 [lindex $argv 1];
+#send_user "$argv0 $argv1\n"
+spawn bash -c "set-title $argv0"
+expect "$"
+send "ls \n"
+spawn expect $argv1
+
+

@@ -1,0 +1,14 @@
+#!/bin/expect
+spawn geth attach http://140.113.216.70:40000
+expect ">"
+send "personal.listAccounts\n"
+expect ">"
+send "net.peerCount\n"
+expect ">"
+send "eth.getBlock(0)\n"
+expect ">"
+send "eth.blockNumber\n"
+expect ">"
+send "admin.nodeInfo\n"
+interact
+

@@ -1,0 +1,5 @@
+personal.unlockAccount(web3.eth.coinbase, "seedphrase")
+personal.unlockAccount(personal.listAccounts[0], "!ApTx4860312")
+web3.personal.unlockAccount(web3.personal.listAccounts[0],"<password>", 15000)
+let ap = await inst.AddPolicy("0xb4d34b326fe55b6925efc93371304e1bf7d0d16e", [{"type": "BigNumber","hex": "0x00"},{"type": "BigNumber","hex": "0x01"}], 0, 1, 2)
+let cp = await inst.CheckAccess.call("0xb4d34b326fe55b6925efc93371304e1bf7d0d16e", [{"type": "BigNumber","hex": "0x00"},{"type": "BigNumber","hex": "0x01"}], 0, 1, 2)

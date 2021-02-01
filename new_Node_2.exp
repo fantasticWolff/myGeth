@@ -1,0 +1,8 @@
+#!/bin/expect
+spawn geth --datadir go-ethereum/Node_2 account new
+expect "Password: "
+send "!ApTx4860312\n"
+expect "password: "
+send "!ApTx4860312\n"
+interact
+
